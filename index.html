@@ -3,405 +3,556 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DFE Bridal DX Project Proposal</title>
+    <title>DFE Proposal: Bridal DX Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Noto Sans JP', sans-serif; }
-        /* アイコンが表示されるまでのチラつき防止 */
-        .lucide { width: 1.25rem; height: 1.25rem; display: inline-block; vertical-align: middle; }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Money flow line adjustments */
+        .flow-line {
+            height: 3rem;
+            width: 2px;
+            background-color: #cbd5e1;
+            position: relative;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-slate-50 text-slate-800 selection:bg-blue-100">
 
-    <!-- Header -->
-    <header class="bg-white/90 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+    <!-- Navigation / Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 bg-opacity-90 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <span class="bg-blue-900 text-white font-bold px-2 py-1 rounded text-xs tracking-widest">DFE</span>
-                <span class="font-bold text-slate-700">Bridal DX Project</span>
+                <div class="bg-blue-900 text-white font-bold px-3 py-1 rounded text-sm tracking-widest">
+                    DFE
+                </div>
+                <span class="text-slate-500 text-sm border-l pl-3 ml-1 border-slate-300">
+                    Internal Proposal
+                </span>
             </div>
-            <div class="text-xs font-medium text-slate-500 border border-slate-200 px-3 py-1 rounded-full">
+            <div class="text-xs font-semibold text-blue-900 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
                 CONFIDENTIAL
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-slate-900 text-white py-24 px-4 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 opacity-90"></div>
-        
-        <div class="max-w-4xl mx-auto relative z-10 text-center">
-            <div class="inline-block bg-amber-500 text-blue-900 text-xs font-bold px-3 py-1 rounded mb-6 tracking-wider">
-                INTERNAL PROPOSAL
+    <section class="relative bg-gradient-to-br from-slate-900 to-blue-900 text-white pt-20 pb-24 overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-white opacity-5 transform skew-x-12 translate-x-20"></div>
+        <div class="max-w-5xl mx-auto px-6 relative fade-in-section" id="hero-content">
+            <div class="inline-block bg-amber-500 text-blue-900 text-xs font-bold px-3 py-1 rounded mb-6 uppercase tracking-wider">
+                Project: Bridal DX
             </div>
             <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                グループ内ブライダル事業の<br>
-                <span class="text-blue-300">運営受託</span> および <span class="text-amber-400">DX化</span>
+                グループ内ブライダル事業の<br />
+                <span class="text-blue-200">運営受託</span>および<span class="text-amber-400">DX化</span>のご提案
             </h1>
-            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                外部流出コストを「グループ内利益」へ。<br>
-                DFEのプロセス管理能力とIT技術が、ブライダル事業の収益構造を変革します。
+            <p class="text-xl text-slate-300 max-w-2xl leading-relaxed mb-8">
+                外部流出コストを「グループ内利益」へ。<br/>
+                DFEのプロセス管理とIT技術が、ブライダル事業の収益構造を変革します。
             </p>
+            
+            <div class="flex flex-wrap gap-4 text-sm font-medium text-slate-300">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="building-2" class="w-4 h-4"></i> 対象: 株式会社神戸クルーザー / ホテルニューオウミ
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Executive Summary -->
-    <section class="py-16 md:py-24 px-4">
-        <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
-            <div class="p-8 md:p-12">
-                <div class="text-center mb-10">
-                    <h2 class="text-2xl font-bold text-slate-900 flex items-center justify-center gap-2">
-                        <i data-lucide="layout-template" class="text-blue-600"></i>
-                        エグゼクティブ・サマリー
-                    </h2>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
-                        <div class="bg-red-50 p-3 rounded-lg w-fit text-red-500 mb-4">
-                            <i data-lucide="alert-triangle" class="w-6 h-6"></i>
-                        </div>
-                        <strong class="block text-slate-800 text-lg mb-2">現状の課題</strong>
-                        <p class="text-sm text-slate-600 leading-relaxed">多額の委託費が外部へ流出し、ノウハウが社内に蓄積されない「ブラックボックス化」が発生。</p>
-                    </div>
-                    
-                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
-                        <div class="bg-blue-50 p-3 rounded-lg w-fit text-blue-600 mb-4">
-                            <i data-lucide="check-circle-2" class="w-6 h-6"></i>
-                        </div>
-                        <strong class="block text-slate-800 text-lg mb-2">DFEの提案</strong>
-                        <p class="text-sm text-slate-600 leading-relaxed">運営をDFEが受託し、グループ内で資金を還流させる。</p>
-                    </div>
+    <section class="py-12 -mt-10 px-6">
+        <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-xl border border-slate-100 p-8 md:p-12 relative z-10">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                <i data-lucide="layout-template" class="text-blue-600"></i>
+                エグゼクティブ・サマリー
+            </h2>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                現在、外部委託に依存しているグループ内のブライダル事業運営を、DFEが受託することを提案いたします。
+                DFEの強みである<strong>「プロセス管理・Google Workspace活用」</strong>による品質向上に加え、
+                これまで社外へ支払っていた委託費を<strong>グループ内で還流させる</strong>ことで、
+                グループ全体のキャッシュフローと連結利益を最大化させます。
+            </p>
+        </div>
+    </section>
 
-                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
-                        <div class="bg-amber-50 p-3 rounded-lg w-fit text-amber-600 mb-4">
-                            <i data-lucide="rocket" class="w-6 h-6"></i>
+    <!-- Current Issues vs Solution -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left: Issues -->
+                <div>
+                    <h3 class="text-sm font-bold text-red-500 tracking-wider uppercase mb-2">Current Issues</h3>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">現状の構造的課題</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 p-4 bg-red-50 rounded-lg border border-red-100">
+                            <div class="bg-white p-2 rounded-full shadow-sm h-fit text-red-500">
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">資金の社外流出</h4>
+                                <p class="text-slate-600 text-sm mt-1">多額の業務委託費が外部へ支払われており、グループ内に利益が残らない。</p>
+                            </div>
                         </div>
-                        <strong class="block text-slate-800 text-lg mb-2">提供価値</strong>
-                        <p class="text-sm text-slate-600 leading-relaxed">「プロセス管理」と「DX (GWS×GAS)」による、属人性を排除した高品質・高収益な運営モデル。</p>
+                        <div class="flex gap-4 p-4 bg-red-50 rounded-lg border border-red-100">
+                            <div class="bg-white p-2 rounded-full shadow-sm h-fit text-red-500">
+                                <i data-lucide="lock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">ノウハウのブラックボックス化</h4>
+                                <p class="text-slate-600 text-sm mt-1">顧客データや運営ノウハウが委託先に蓄積され、資産にならない。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Right: Solution -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-blue-100 rounded-2xl transform rotate-3 scale-95 opacity-50"></div>
+                    <div class="bg-blue-900 text-white rounded-2xl p-8 relative shadow-2xl">
+                        <h3 class="text-amber-400 font-bold tracking-wider uppercase mb-2 text-sm">DFE Solution</h3>
+                        <h2 class="text-2xl font-bold mb-6">DFEによる「運営OS」の刷新</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="text-amber-400 shrink-0 mt-1"></i>
+                                <span>
+                                    <strong class="block text-white">プロセス標準化</strong>
+                                    <span class="text-blue-200 text-sm">属人性を廃止し、誰でも80点以上出せるマニュアル化</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="text-amber-400 shrink-0 mt-1"></i>
+                                <span>
+                                    <strong class="block text-white">完全デジタル管理 (GWS × GAS)</strong>
+                                    <span class="text-blue-200 text-sm">タスク自動生成・期限管理によるミスの撲滅</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="text-amber-400 shrink-0 mt-1"></i>
+                                <span>
+                                    <strong class="block text-white">グループ内還流</strong>
+                                    <span class="text-blue-200 text-sm">委託費をDFEの売上とし、グループ利益を確保</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Money Flow -->
-    <section class="py-16 bg-slate-100 px-4">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">最大のメリット：グループ内経済圏の確立</h2>
+    <!-- Main Merit: Money Flow -->
+    <section class="py-20 bg-slate-100 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    最大のメリット：<span class="text-blue-700">グループ内経済圏の確立</span>
+                </h2>
                 <p class="text-slate-600">外部へ消えていたコストを、グループ内の利益に変える仕組みです。</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
                 <!-- Before -->
-                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm opacity-80">
-                    <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-6 text-center">Before: 外部委託</h3>
-                    <div class="space-y-4">
-                        <div class="p-4 bg-slate-50 rounded-lg text-center font-bold text-slate-700 border border-slate-200">
-                            グループ会社
+                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm opacity-70">
+                    <div class="text-center mb-6 pb-4 border-b border-slate-100">
+                        <h3 class="text-xl font-bold text-slate-500">これまでの構造（Before）</h3>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <div class="w-full bg-slate-100 p-4 rounded text-center font-bold text-slate-700 border border-slate-300">
+                            グループ会社<br/>(ホテル・クルーザー)
                         </div>
-                        <div class="flex justify-center py-2">
-                            <div class="flex flex-col items-center">
-                                <span class="text-xs text-red-500 font-bold mb-1">委託費 (流出)</span>
-                                <i data-lucide="arrow-down" class="text-red-400 w-6 h-6"></i>
+                        <div class="flow-line">
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-2 text-xs text-slate-400 whitespace-nowrap">
+                                委託費支払い
                             </div>
                         </div>
-                        <div class="p-4 bg-white rounded-lg text-center font-bold text-red-500 border-2 border-red-100">
-                            外部ベンダー
+                        <div class="w-full bg-red-50 p-4 rounded text-center font-bold text-red-500 border border-red-200 flex flex-col items-center justify-center">
+                            <span class="text-xs text-red-400 mb-1">外部へ流出</span>
+                            外部委託先企業
+                        </div>
+                        <div class="text-sm text-slate-400 mt-2 text-center">
+                            グループ内に利益もノウハウも残らない
                         </div>
                     </div>
-                    <p class="text-xs text-center text-slate-400 mt-6">利益もノウハウも社外へ消えてしまう</p>
                 </div>
 
                 <!-- After -->
                 <div class="bg-white p-8 rounded-xl border-2 border-blue-600 shadow-lg relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs px-3 py-1 font-bold rounded-bl">RECOMMENDED</div>
-                    <h3 class="text-sm font-bold text-blue-600 uppercase tracking-wider mb-6 text-center">After: DFE受託モデル</h3>
-                    <div class="space-y-4">
-                        <div class="p-4 bg-blue-50 rounded-lg text-center font-bold text-blue-900 border border-blue-100">
-                            グループ会社
-                        </div>
-                        <div class="flex justify-center py-2">
-                            <div class="flex flex-col items-center">
-                                <span class="text-xs text-blue-600 font-bold mb-1">資金還流</span>
-                                <i data-lucide="arrow-up-down" class="text-blue-500 w-6 h-6"></i>
+                    <div class="text-center mb-6 pb-4 border-b border-slate-100">
+                        <h3 class="text-xl font-bold text-blue-800">DFE受託モデル（After）</h3>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <div class="w-full p-6 rounded-xl border-2 border-dashed border-blue-200 bg-blue-50 relative">
+                            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-3 py-1 text-xs rounded-full font-bold">
+                                GROUP HOLDINGS
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row gap-8 items-center justify-between mt-2">
+                                <div class="bg-white p-4 rounded shadow-sm text-center w-full md:w-1/2">
+                                    <div class="font-bold text-slate-700 text-sm">グループ会社</div>
+                                    <div class="text-xs text-slate-500 mt-1">ホテル・クルーザー</div>
+                                </div>
+
+                                <div class="flex flex-col items-center text-blue-600 shrink-0">
+                                    <i data-lucide="arrow-left-right" class="w-6 h-6"></i>
+                                    <div class="text-xs font-bold mt-1">資金還流</div>
+                                </div>
+
+                                <div class="bg-blue-900 text-white p-4 rounded shadow-sm text-center w-full md:w-1/2">
+                                    <div class="font-bold text-amber-400 text-sm">DFE</div>
+                                    <div class="text-xs text-blue-200 mt-1">運営・DX管理</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="p-4 bg-blue-600 rounded-lg text-center font-bold text-white shadow-md">
-                            DFE (DX管理)
+                        <div class="flex items-center gap-2 text-sm text-blue-800 font-bold mt-2 bg-blue-100 px-4 py-2 rounded-full">
+                            <i data-lucide="trending-up" class="w-4 h-4"></i>
+                            連結利益の最大化・資産の蓄積
                         </div>
                     </div>
-                    <p class="text-xs text-center text-blue-600 font-bold mt-6 flex items-center justify-center gap-1">
-                        <i data-lucide="trending-up" class="w-4 h-4"></i> 連結利益の最大化・資産蓄積
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 50 Pax Operation Model -->
-    <section class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-10">
-                <h2 class="text-3xl font-bold text-slate-900 mb-2">50名規模 当日運営体制 (モデルケース)</h2>
-                <p class="text-slate-600">DFEの「管理力」を活かし、コアメンバーが全体の品質を担保。専門職は変動費として外部リソースを活用します。</p>
+    <!-- Technology & Team -->
+    <section class="py-16 px-6 max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">実現するためのソリューション</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="layout-template" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-800 mb-2">業務の標準化</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    「営業・企画・運営」の3工程に業務を分解。誰が担当しても高品質を保てる「DFE標準マニュアル」を整備します。
+                </p>
             </div>
 
-            <div class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
-                <div class="grid md:grid-cols-4">
-                    
-                    <!-- Main Table -->
-                    <div class="md:col-span-3 border-r border-slate-100">
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-left text-sm min-w-[600px]">
-                                <thead class="bg-slate-50 text-slate-700 font-bold border-b border-slate-200">
-                                    <tr>
-                                        <th class="p-4 w-1/4">役割区分</th>
-                                        <th class="p-4 w-1/4">ポジション</th>
-                                        <th class="p-4 w-1/6 text-center">人数</th>
-                                        <th class="p-4">主な業務内容</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-slate-100">
-                                    <!-- Core -->
-                                    <tr class="bg-blue-50/30">
-                                        <td class="p-4 font-bold text-blue-900 align-top md:align-middle">
-                                            司令塔<br>
-                                            <span class="text-xs font-normal text-slate-500">(DFE Core)</span>
-                                        </td>
-                                        <td class="p-4">
-                                            <div class="space-y-4">
-                                                <div class="flex items-center gap-2"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-bold w-20 text-center">プランナー</span></div>
-                                                <div class="flex items-center gap-2"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-bold w-20 text-center">キャプテン</span></div>
-                                                <div class="flex items-center gap-2"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-bold w-20 text-center">セールス</span></div>
-                                            </div>
-                                        </td>
-                                        <td class="p-4 text-center font-bold text-lg align-middle">
-                                            <div class="space-y-4 text-sm md:text-lg">
-                                                <div>1</div>
-                                                <div>1</div>
-                                                <div>1</div>
-                                            </div>
-                                        </td>
-                                        <td class="p-4 text-slate-600 align-middle">
-                                            <div class="space-y-5 md:space-y-4 text-xs md:text-sm">
-                                                <div class="h-6 flex items-center">全体の進行管理、新郎新婦ケア統括</div>
-                                                <div class="h-6 flex items-center">披露宴会場の現場指揮、スタッフ指示</div>
-                                                <div class="h-6 flex items-center">お出迎え、次回予約・顧客維持</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- Partners -->
-                                    <tr>
-                                        <td class="p-4 font-bold text-slate-700 align-top md:align-middle">
-                                            専門職<br>
-                                            <span class="text-xs font-normal text-slate-500">(Partners)</span>
-                                        </td>
-                                        <td class="p-4">
-                                            <div class="space-y-4">
-                                                <div class="h-6 flex items-center">アテンド (介添)</div>
-                                                <div class="h-6 flex items-center">司会 / 音響</div>
-                                                <div class="h-6 flex items-center">カメラマン</div>
-                                                <div class="h-6 flex items-center">エンドロール</div>
-                                            </div>
-                                        </td>
-                                        <td class="p-4 text-center text-lg align-middle">
-                                            <div class="space-y-4 text-sm md:text-lg">
-                                                <div class="h-6">1</div>
-                                                <div class="h-6">各1</div>
-                                                <div class="h-6">1</div>
-                                                <div class="h-6 font-bold">2</div>
-                                            </div>
-                                        </td>
-                                        <td class="p-4 text-slate-600 align-middle">
-                                            <div class="space-y-4 text-xs md:text-sm">
-                                                <div class="h-6 flex items-center">新婦ケア、移動補助</div>
-                                                <div class="h-6 flex items-center">進行アナウンス、BGM・照明操作</div>
-                                                <div class="h-6 flex items-center">スナップ写真撮影</div>
-                                                <div class="h-6 flex items-center">撮影1名 ＋ 編集1名 (即日編集)</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- Field -->
-                                    <tr class="bg-amber-50/30">
-                                        <td class="p-4 font-bold text-amber-900 align-top md:align-middle">
-                                            おもてなし<br>
-                                            <span class="text-xs font-normal text-slate-500">(Field)</span>
-                                        </td>
-                                        <td class="p-4">
-                                            <div class="space-y-4">
-                                                <div class="h-6 flex items-center">キッチン</div>
-                                                <div class="h-6 flex items-center">サービス</div>
-                                            </div>
-                                        </td>
-                                        <td class="p-4 text-center text-lg align-middle">
-                                            <div class="space-y-4 text-sm md:text-lg">
-                                                <div class="h-6">4</div>
-                                                <div class="h-6 font-bold">5</div>
-                                            </div>
-                                        </td>
-                                        <td class="p-4 text-slate-600 align-middle">
-                                            <div class="space-y-4 text-xs md:text-sm">
-                                                <div class="h-6 flex items-center">料理長1名 ＋ アシスタント3名</div>
-                                                <div class="h-6 flex items-center">配膳・ドリンク (ゲスト10名に1名)</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- Summary Column -->
-                    <div class="bg-slate-50 p-6 flex flex-col justify-center items-center text-center border-t md:border-t-0 md:border-l border-slate-100">
-                        <h4 class="text-sm font-bold text-slate-500 uppercase tracking-wide mb-2">Total Staff</h4>
-                        <div class="text-5xl font-bold text-blue-900 mb-1">18<span class="text-2xl">名</span></div>
-                        <p class="text-xs text-slate-400 mb-8">(ゲスト50名想定)</p>
-
-                        <div class="bg-white p-4 rounded-lg border border-slate-200 text-left w-full shadow-sm">
-                            <h5 class="text-xs font-bold text-blue-600 mb-2 flex items-center gap-1">
-                                <i data-lucide="check" class="w-3 h-3"></i> ポイント
-                            </h5>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                                「キッチン・サービス」等の実働部隊は変動費化。<br>
-                                「プランナー・キャプテン」が品質を管理し、少数精鋭で高利益を実現します。
-                            </p>
-                        </div>
-                    </div>
-
+            <!-- Card 2 -->
+            <div class="bg-white p-6 rounded-xl border border-blue-200 shadow-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500 opacity-10 rounded-bl-full"></div>
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="database" class="w-6 h-6"></i>
                 </div>
+                <h3 class="text-lg font-bold text-slate-800 mb-2">GWS × GAS 自動化</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Google Workspace上で独自の婚礼管理OSを構築。タスク生成、見積発行、フォルダ管理を自動化し、工数を劇的に削減します。
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center mb-4">
+                    <i data-lucide="users" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-800 mb-2">柔軟なチーム組成</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    コア管理はDFE社員、実務はフリーランスNWを活用。固定費を抑え、案件数に応じた変動費型モデルを実現します。
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Organization -->
-    <section class="py-16 bg-slate-50 px-4">
+    <!-- Organization & Headcount -->
+    <section class="py-20 bg-white border-t border-slate-100 px-6">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">組織体制・必要人員計画</h2>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">
+                    組織体制・必要人員計画 <span class="text-slate-400 text-xl font-normal">(Resource Plan)</span>
+                </h2>
+                <p class="text-slate-600">
+                    立ち上げ期はDFE社員の<span class="font-bold text-blue-600">「兼務」</span>を活用し、最小限の固定費でスタート。<br/>
+                    実務は外部プロフェッショナル（変動費）を活用する「ハイブリッド型組織」です。
+                </p>
+            </div>
+
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Fixed Cost -->
-                <div class="bg-white p-8 rounded-xl border-t-4 border-t-blue-600 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="bg-blue-100 p-3 rounded-lg text-blue-600">
-                            <i data-lucide="briefcase" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-800">コアメンバー (固定費)</h3>
+                <!-- Core Members -->
+                <div class="border border-blue-200 rounded-xl overflow-hidden shadow-sm">
+                    <div class="bg-blue-50 px-6 py-4 border-b border-blue-100 flex items-center justify-between">
+                        <h3 class="font-bold text-blue-900 flex items-center gap-2">
+                            <i data-lucide="briefcase" class="w-5 h-5"></i> コアメンバー (固定費)
+                        </h3>
+                        <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded">DFE社員</span>
                     </div>
-                    <p class="text-sm text-slate-600 mb-6">DFE社員の「兼務」を活用し、最小限の固定費でスタート</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center justify-between p-3 bg-slate-50 rounded">
-                            <span class="font-bold text-slate-700">事業責任者 (GM)</span>
-                            <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">向井 (兼務)</span>
-                        </li>
-                        <li class="flex items-center justify-between p-3 bg-slate-50 rounded">
-                            <span class="font-bold text-slate-700">PM</span>
-                            <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">坂口 (兼務)</span>
-                        </li>
-                        <li class="flex items-center justify-between p-3 bg-slate-50 rounded">
-                            <span class="font-bold text-slate-700">Admin</span>
-                            <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">総務・AI (0.5名)</span>
-                        </li>
-                    </ul>
+                    <div class="p-6 space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-slate-100 text-slate-500 font-bold px-3 py-1 rounded text-sm min-w-[3rem] text-center">1名</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">
+                                    事業責任者 (GM)
+                                    <span class="ml-2 text-blue-600 bg-blue-50 px-2 py-0.5 rounded text-sm border border-blue-100">向井</span>
+                                </h4>
+                                <p class="text-xs text-slate-500 mt-1">※役員・部長クラスが兼務</p>
+                                <p class="text-sm text-slate-600 mt-1">経営判断、グループ間調整、PL管理</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-slate-100 text-slate-500 font-bold px-3 py-1 rounded text-sm min-w-[3rem] text-center">1名</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">
+                                    プロジェクトマネージャー (PM)
+                                    <span class="ml-2 text-blue-600 bg-blue-50 px-2 py-0.5 rounded text-sm border border-blue-100">坂口</span>
+                                </h4>
+                                <p class="text-xs text-slate-500 mt-1">※立ち上げ期は他業務と兼務可</p>
+                                <p class="text-sm text-slate-600 mt-1">マニュアル整備、タスク進行管理、品質チェック</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-slate-100 text-slate-500 font-bold px-3 py-1 rounded text-sm min-w-[3rem] text-center">0.5名</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">
+                                    バックオフィス (Admin)
+                                    <span class="ml-2 text-blue-600 bg-blue-50 px-2 py-0.5 rounded text-sm border border-blue-100">総務とAI</span>
+                                </h4>
+                                <p class="text-xs text-slate-500 mt-1">※既存のBPO/経理チームが兼務</p>
+                                <p class="text-sm text-slate-600 mt-1">請求書発行、受発注処理、契約書管理、自動化実装</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Variable Cost -->
-                <div class="bg-white p-8 rounded-xl border-t-4 border-t-amber-500 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="bg-amber-100 p-3 rounded-lg text-amber-600">
-                            <i data-lucide="users" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-800">実務プロ (変動費)</h3>
+                <!-- Flexible Members -->
+                <div class="border border-amber-200 rounded-xl overflow-hidden shadow-sm">
+                    <div class="bg-amber-50 px-6 py-4 border-b border-amber-100 flex items-center justify-between">
+                        <h3 class="font-bold text-amber-900 flex items-center gap-2">
+                            <i data-lucide="user-cog" class="w-5 h-5"></i> 実務プロフェッショナル (変動費)
+                        </h3>
+                        <span class="text-xs bg-amber-200 text-amber-800 px-2 py-1 rounded">外部ネットワーク</span>
                     </div>
-                    <p class="text-sm text-slate-600 mb-6">外部ネットワークを活用したハイブリッド型組織</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center justify-between p-3 bg-slate-50 rounded">
-                            <span class="font-bold text-slate-700">プランナー</span>
-                            <span class="text-xs text-amber-600 font-bold">業務委託</span>
-                        </li>
-                        <li class="flex items-center justify-between p-3 bg-slate-50 rounded">
-                            <span class="font-bold text-slate-700">セールス</span>
-                            <span class="text-xs text-amber-600 font-bold">スポット稼働</span>
-                        </li>
-                        <li class="flex items-center justify-between p-3 bg-slate-50 rounded">
-                            <span class="font-bold text-slate-700">当日スタッフ</span>
-                            <span class="text-xs text-amber-600 font-bold">登録制・派遣</span>
-                        </li>
-                    </ul>
+                    <div class="p-6 space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-slate-100 text-slate-500 font-bold px-3 py-1 rounded text-sm min-w-[3rem] text-center">変動</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">プランナー (Planner)</h4>
+                                <p class="text-xs text-slate-500 mt-1">※案件ごとの業務委託契約</p>
+                                <p class="text-sm text-slate-600 mt-1">顧客打ち合わせ、提案、当日施工管理</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-slate-100 text-slate-500 font-bold px-3 py-1 rounded text-sm min-w-[3rem] text-center">変動</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">ブライダルセールス (Sales)</h4>
+                                <p class="text-xs text-slate-500 mt-1">※土日中心のスポット稼働可</p>
+                                <p class="text-sm text-slate-600 mt-1">新規来館接客、クロージング業務</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-slate-100 text-slate-500 font-bold px-3 py-1 rounded text-sm min-w-[3rem] text-center">変動</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">当日運営スタッフ</h4>
+                                <p class="text-xs text-slate-500 mt-1">※派遣・アルバイト登録制</p>
+                                <p class="text-sm text-slate-600 mt-1">アテンド、音響、司会等の専門職</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Roadmap -->
-    <section class="py-16 px-4">
+    <section class="py-16 bg-slate-900 text-white px-6">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">立ち上げロードマップ</h2>
-            <div class="space-y-6">
-                <!-- Step 1 -->
-                <div class="flex gap-6 items-start">
-                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold">1</div>
-                    <div class="flex-grow bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-bold text-lg text-slate-800">Web調査による高速型化</h4>
-                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">Month 1</span>
+            <h2 class="text-3xl font-bold mb-12 text-center">立ち上げロードマップ</h2>
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
+                
+                <!-- Phase 1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-800 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-amber-500 font-bold">
+                        1
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="search" class="text-amber-500 w-4 h-4"></i>
+                                <h3 class="font-bold text-lg">Web調査による高速型化</h3>
+                            </div>
+                            <span class="text-xs bg-amber-600 text-white px-2 py-1 rounded">Month 1 (Fast Track)</span>
                         </div>
-                        <p class="text-slate-600 text-sm">他社フローのベンチマーク、GWS/GAS環境の即時構築、フリーランスNWの開拓</p>
+                        <ul class="text-sm text-slate-400 space-y-2 list-disc list-inside">
+                            <li>他社フローのベンチマーク・ノウハウ収集</li>
+                            <li>GWS/GAS環境の即時構築</li>
+                            <li>フリーランスNWの開拓</li>
+                        </ul>
                     </div>
                 </div>
-                <!-- Step 2 -->
-                <div class="flex gap-6 items-start">
-                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold">2</div>
-                    <div class="flex-grow bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-bold text-lg text-slate-800">プレ運用・部分受託</h4>
-                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">Month 2-3</span>
+
+                <!-- Phase 2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-800 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-bold text-slate-400">
+                        2
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-bold text-lg text-slate-300">プレ運用・部分受託</h3>
+                            <span class="text-xs bg-slate-700 px-2 py-1 rounded text-slate-300">Month 2-3</span>
                         </div>
-                        <p class="text-slate-600 text-sm">小規模案件（少人数婚等）でのテスト運用、既存委託先からのデータ移管、実績作り</p>
+                        <ul class="text-sm text-slate-400 space-y-2 list-disc list-inside">
+                            <li>小規模案件（少人数婚等）でのテスト運用</li>
+                            <li>既存委託先からのデータ移管</li>
+                            <li>自社運営による初施工の実績作り</li>
+                        </ul>
                     </div>
                 </div>
-                <!-- Step 3 -->
-                <div class="flex gap-6 items-start">
-                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold">3</div>
-                    <div class="flex-grow bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-bold text-lg text-slate-800">完全稼働・拡大</h4>
-                            <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">Month 4+</span>
+
+                <!-- Phase 3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-800 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-bold text-slate-400">
+                        3
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="zap" class="text-amber-500 w-4 h-4"></i>
+                                <h3 class="font-bold text-lg text-slate-300">完全稼働・拡大</h3>
+                            </div>
+                            <span class="text-xs bg-slate-700 px-2 py-1 rounded text-slate-300">Month 4+</span>
                         </div>
-                        <p class="text-slate-600 text-sm">全案件のDFE受託への切り替え完了、マーケティング強化、グループ外への展開準備</p>
+                        <ul class="text-sm text-slate-400 space-y-2 list-disc list-inside">
+                            <li>全案件のDFE受託への切り替え完了</li>
+                            <li>蓄積データに基づくマーケティング強化</li>
+                            <li>グループ内他事業へのモデル横展開</li>
+                        </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Future Vision -->
-    <section class="py-24 bg-slate-900 text-white px-4 relative overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h2 class="text-4xl md:text-5xl font-bold mb-8">
-                外貨を獲得する<br><span class="text-blue-400">プロフィットセンター</span>へ
-            </h2>
-            <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto mb-12">
-                構築した「DFE Bridal OS」と「運営チーム」は、人手不足に悩む他社のホテルや式場にとっても強力なソリューションとなります。
-                将来的に運営受託をグループ外へ広げ、<strong class="text-white border-b-2 border-amber-500">外部収益を獲得するビジネスモデル</strong>へとスケールさせます。
-            </p>
-            <button class="bg-amber-500 text-blue-900 font-bold py-3 px-8 rounded-full hover:bg-amber-400 transition-colors">
-                プロジェクトを開始する
-            </button>
+    <section class="py-20 bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-900 text-white px-6 relative overflow-hidden">
+        <!-- Background Patterns -->
+        <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-[100px] opacity-20"></div>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                
+                <div class="md:w-1/2">
+                    <div class="inline-flex items-center gap-2 bg-amber-500 text-blue-900 text-xs font-bold px-3 py-1 rounded mb-6 uppercase tracking-wider">
+                        <i data-lucide="rocket" class="w-4 h-4"></i> Future Vision
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                        外貨を獲得する<br/>
+                        <span class="text-blue-300">プロフィットセンター</span>へ
+                    </h2>
+                    <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                        グループ内の成功モデルを、外部へ。
+                        <br/>
+                        構築した「DFE Bridal OS」と「運営チーム」は、人手不足に悩む他社のホテルや結婚式場にとっても強力なソリューションとなります。
+                        将来的に運営受託をグループ外へ広げ、<strong>外貨（外部収益）を獲得するビジネスモデル</strong>へとスケールさせます。
+                    </p>
+                </div>
+
+                <div class="md:w-1/2 w-full">
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+                        <div class="flex flex-col items-center gap-6">
+                            
+                            <!-- Central Hub -->
+                            <div class="flex flex-col items-center">
+                                <div class="w-40 bg-blue-600 p-4 rounded-lg text-center font-bold shadow-lg border-2 border-amber-400 relative z-10">
+                                    DFE Bridal OS
+                                    <div class="text-xs font-normal text-blue-200 mt-1">運営・人材・システム</div>
+                                </div>
+                            </div>
+
+                            <!-- Incoming Revenue Arrows -->
+                            <div class="w-full grid grid-cols-3 gap-4 text-center">
+                                <!-- Arrow 1: Group -->
+                                <div class="flex flex-col items-center">
+                                    <div class="h-12 w-0.5 bg-gradient-to-t from-blue-600 to-transparent mb-2"></div>
+                                    <div class="text-xs text-slate-400 mb-2">Step 1</div>
+                                    <div class="bg-white/20 p-3 rounded w-full text-xs font-bold">
+                                        グループ会社
+                                    </div>
+                                </div>
+
+                                <!-- Arrow 2: External Hotel -->
+                                <div class="flex flex-col items-center">
+                                    <div class="h-12 w-0.5 bg-gradient-to-t from-amber-500 to-transparent mb-2"></div>
+                                    <div class="text-xs text-amber-400 font-bold mb-2">Step 2</div>
+                                    <div class="bg-amber-500/20 border border-amber-500/50 p-3 rounded w-full text-xs font-bold text-amber-200">
+                                        外部ホテルA
+                                        <div class="text-[10px] mt-1 opacity-70">New Revenue</div>
+                                    </div>
+                                </div>
+
+                                <!-- Arrow 3: External Venue -->
+                                <div class="flex flex-col items-center">
+                                    <div class="h-12 w-0.5 bg-gradient-to-t from-amber-500 to-transparent mb-2"></div>
+                                    <div class="text-xs text-amber-400 font-bold mb-2">Step 2</div>
+                                    <div class="bg-amber-500/20 border border-amber-500/50 p-3 rounded w-full text-xs font-bold text-amber-200">
+                                        外部式場B
+                                        <div class="text-[10px] mt-1 opacity-70">New Revenue</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 flex items-center gap-2 text-sm text-blue-200 font-bold">
+                                <i data-lucide="globe" class="w-4 h-4"></i>
+                                グループ外からの収益拡大
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white py-8 border-t border-slate-200 text-center">
-        <p class="text-slate-500 text-sm">© 2026 Data Far East Co., Ltd. Confidential Proposal.</p>
+    <footer class="bg-white py-12 px-6 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">
+                グループの資産と、DFEの管理能力を掛け合わせる。
+            </h2>
+            <p class="text-slate-600 mb-8 max-w-2xl mx-auto">
+                本提案は単なる「運営代行」ではありません。
+                グループが持つハードと、DFEが持つソフト（IT・管理）を融合させ、
+                グループ全体に利益をもたらすための経営戦略です。
+            </p>
+            <div class="inline-block bg-slate-100 px-8 py-4 rounded-lg border border-slate-200">
+                <p class="text-sm text-slate-500 mb-1">お問い合わせ・プロジェクト責任者</p>
+                <p class="text-lg font-bold text-blue-900">株式会社データ・ファー・イースト社 (DFE)</p>
+            </div>
+            <div class="mt-12 text-xs text-slate-400">
+                © 2026 Data Far East Co., Ltd. Confidential Proposal.
+            </div>
+        </div>
     </footer>
 
+    <!-- Scripts to initialize Icons and Animations -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Fade in animation trigger
+        window.addEventListener('load', () => {
+            const hero = document.getElementById('hero-content');
+            if (hero) {
+                setTimeout(() => {
+                    hero.classList.add('is-visible');
+                }, 100);
+            }
         });
     </script>
 </body>
